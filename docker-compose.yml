@@ -1,0 +1,48 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP.NET Core service.
+
+version: '3.4'
+
+services:
+  marcasautosapi:
+    image: marcasautosapi
+    restart: always
+    build:
+      context: .
+      dockerfile: MarcasAutosAPI/Dockerfile
+      args:
+        - configuration=Debug
+    env_file:
+      - path: .env
+        required: false
+    ports:
+      - 7005:7005
+      - 5234:5234
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=${URLS:-http://+:5234}
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=${CERTIFICATE_PASSWORD}
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=${CERTIFICATE_FILENAME:+/https/$CERTIFICATE_FILENAME}
+      - ConnectionStrings__MarcasAutosDb=Host=db;Database=${DATABASE_NAME};Username=${DATABASE_USER};Password=${DATABASE_PASSWORD}
+    volumes:
+      - ~/.aspnet/https:/https:ro
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    restart: always
+    env_file:
+      - path: .env
+        required: false
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_NAME}
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

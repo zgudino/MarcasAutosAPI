@@ -1,0 +1,6 @@
+@MarcasAutosAPI_HostAddress = http://localhost:5234
+
+GET {{MarcasAutosAPI_HostAddress}}/api/carbrands
+Accept: application/json
+
+###

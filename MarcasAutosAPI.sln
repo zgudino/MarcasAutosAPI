@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcasAutosAPI", "MarcasAutosAPI\MarcasAutosAPI.csproj", "{B278B3D5-13C6-4E9E-ACDD-F038E6D54BB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcasAutosAPI.Test", "MarcasAutosAPI.Test\MarcasAutosAPI.Test.csproj", "{0FABCF7D-5532-42B2-9A0F-55460AD6A530}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B278B3D5-13C6-4E9E-ACDD-F038E6D54BB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B278B3D5-13C6-4E9E-ACDD-F038E6D54BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B278B3D5-13C6-4E9E-ACDD-F038E6D54BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B278B3D5-13C6-4E9E-ACDD-F038E6D54BB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FABCF7D-5532-42B2-9A0F-55460AD6A530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FABCF7D-5532-42B2-9A0F-55460AD6A530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FABCF7D-5532-42B2-9A0F-55460AD6A530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FABCF7D-5532-42B2-9A0F-55460AD6A530}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
